@@ -4,26 +4,33 @@
 noofturns=0
 win='n'
 turn=input("Whose turn X or O:")
-board = ['--','--','--',
-         '--','--','--',
-         '--','--','--']
+board = ['  ','  ','  ',
+         '  ','  ','  ',
+         '  ','  ','  ']
+
 def print_board():
+    b1=' -----+------+------'
+   
     for i in range (9):
-      print(board[i],end='\t')
-      if ((i+1)%3==0):
-          print()
+      if(i==8):
+        print(' ',board[i])
+      elif((i+1)%3==0 ):
+        print(' ',board[i])
+        print(b1)
+      else:
+        print(' ',board[i],' |',end='')        
 def take_turn(t,no):
   global turn
   global noofturns
   if t == 'X':
-      print("X\'s Turn")
-      temp=int(input('Enter your choice:'))
-      board[temp]='X'
+      print("\nX\'s Turn")
+      temp=int(input('Enter your choice:'))-1
+      board[temp]=' X'
       turn='O'
   else:
-      print("O\'s Turn")
-      temp=int(input('Enter your choice:'))
-      board[temp]='O'
+      print("\nO\'s Turn")
+      temp=int(input('Enter your choice:'))-1
+      board[temp]=' O'
       turn='X'
   noofturns=no+1
 def check_win():
