@@ -7,8 +7,7 @@ turn=input("Whose turn X or O:")
 board = ['  ','  ','  ',
          '  ','  ','  ',
          '  ','  ','  ']
-for i in range (9):
-  board[i]="--"
+
 def print_board():
     b1=' -----+------+------'
    
@@ -25,12 +24,12 @@ def take_turn(t,no):
   global noofturns
   if t == 'X':
       print("\nX\'s Turn")
-      temp=int(input('Enter your choice:'))
+      temp=int(input('Enter your choice:'))-1
       board[temp]=' X'
       turn='O'
   else:
       print("\nO\'s Turn")
-      temp=int(input('Enter your choice:'))
+      temp=int(input('Enter your choice:'))-1
       board[temp]=' O'
       turn='X'
   noofturns=no+1
